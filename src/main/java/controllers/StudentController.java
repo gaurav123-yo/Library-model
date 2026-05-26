@@ -78,6 +78,15 @@ public class StudentController {
             }
         }
 
+        // Also resolve categories of books they have liked
+        for (String isbn : likedIsbns) {
+            Book book = bookDAO.getBookByIsbn(isbn);
+            if (book != null && !categories.contains(book.getCategory())) {
+                categories.add(book.getCategory());
+            }
+        }
+
+
         // If categories list is empty, default to standard trending fields
         if (categories.isEmpty()) {
             categories.add("Computer Science");
