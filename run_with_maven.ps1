@@ -77,4 +77,4 @@ Write-Host ""
 Write-Host "Step 2: Compiling and launching GUI Application..." -ForegroundColor Cyan
 Write-Host "(Note: If MongoDB is offline, you will see a connection setup dialog to enter your MongoDB connection details.)" -ForegroundColor Yellow
 Write-Host "Launching..." -ForegroundColor Gray
-& $mvnCmd compile exec:java
+& $mvnCmd compile exec:exec
